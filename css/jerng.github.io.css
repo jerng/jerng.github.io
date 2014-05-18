@@ -17,7 +17,7 @@ body {
   font-size: 1em;
   }
 
-header, section {
+header {
   float:left;
 }
 
@@ -25,8 +25,9 @@ h1,h6 {
   text-align:center;
 }
 
-div { 
-  opacity: 0;
+header > div, 
+section > div {
+  opacity:0;
   text-align:justify;
 }
 
@@ -38,7 +39,7 @@ header > div {
   header, section {
     width: 400px;
   }
-  header > div, section > div {
+  header > div, section > div > div {
     width: 370px; 
     padding: 20px 10px;
     margin: 5px 5px; 
@@ -55,15 +56,16 @@ header > div {
   }
 }
 
-div:first-child {
-  opacity: 1;
-}
-
-div:hover {
+div:first-child, 
+div:first-child:hover ~ div ,
+div:not(:first-child):hover ,
+div.selected,
+section:hover > div {
   opacity:1;
 }
 
-div:first-child:hover {
+header > div:first-child:hover, 
+section > div:first-child:hover > div {
   -webkit-animation: iterate_bgc 0.5s ease infinite alternate;
 }
 
@@ -75,23 +77,39 @@ div:first-child ~ div {
   -webkit-transition: opacity 1s;
 }
 
-div:first-child:hover ~ div {
-  opacity:1;
-}
-
-div > div {
-  display: none;
-}
 
 li {
   padding: 5px 0px;
   text-align: left;
 }
 
-div.selected {
-  opacity:1; 
-}
-
 section {
   display:none;
+  float:right;
+  clear:right;
+}
+
+section > div > div:first-child {
+  background-color:#eee;
+  display:block;
+  height:100%;
+  width:100%;
+}
+
+section > div:not(:first-child):hover > div:first-child {
+  position:fixed;
+  top:0px;
+  left:0px;
+  width:50%;
+  height:100%;
+}
+
+section > div:not(:first-child) > div:nth-child(2) /* placeholder */,
+section > div:not(:first-child) > div:first-child > div /* text */ {
+  display:none;
+}
+
+section > div:not(:first-child):hover > div:nth-child(2) ,
+section > div:not(:first-child):hover > div:first-child > div /* text */ {
+  display:block;
 }
