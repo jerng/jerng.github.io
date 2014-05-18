@@ -1,0 +1,97 @@
+@font-face { 
+  font-family: Roboto Light;
+  src: url(../fonts/Roboto/Roboto-Light.ttf);
+  }
+
+body { 
+  margin:0px;
+  font-family : 
+    Roboto Light,
+    Arial,
+    Helvetica,
+    "Microsoft Yahei",
+    "微软雅黑",
+    STXihei,
+    "华文细黑",
+    san-serif;
+  font-size: 1em;
+  }
+
+header, section {
+  float:left;
+}
+
+h1,h6 {
+  text-align:center;
+}
+
+div { 
+  opacity: 0;
+  text-align:justify;
+}
+
+header > div {
+  background-color: #ccc;
+}
+
+@media all and (min-width: 800px) {
+  header, section {
+    width: 400px;
+  }
+  header > div, section > div {
+    width: 370px; 
+    padding: 20px 10px;
+    margin: 5px 5px; 
+  }
+}
+
+@media all and (max-width: 799px) {
+  header {
+    width: 100%;
+  }
+  header > div {
+    width: 96%; /* + padding = 100% */
+    padding: 20px 2%;
+  }
+}
+
+div:first-child {
+  opacity: 1;
+}
+
+div:hover {
+  opacity:1;
+}
+
+div:first-child:hover {
+  -webkit-animation: iterate_bgc 0.5s ease infinite alternate;
+}
+
+@-webkit-keyframes iterate_bgc {
+  to {background-color: #aaf}
+}
+
+div:first-child ~ div {
+  -webkit-transition: opacity 1s;
+}
+
+div:first-child:hover ~ div {
+  opacity:1;
+}
+
+div > div {
+  display: none;
+}
+
+li {
+  padding: 5px 0px;
+  text-align: left;
+}
+
+div.selected {
+  opacity:1; 
+}
+
+section {
+  display:none;
+}

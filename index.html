@@ -1,85 +1,135 @@
+<!DOCTYPE html>
 <html>
 <head>
-<script  src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" type="text/css" href="./css/jerng.github.io.css">
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script type="text/javascript" src="./js/jerng.github.io.js"></script>
 </head>
 <body>
-There will soon be a portfolio, and statement of interests site here. Meanwhile, this placeholder will suffice.
-<hr>
-<h1>Select a circle around a point (click start, click stop)</h1>
-(proof of concept only)<br>
-<canvas id="thecanvas" width="500" height="500"
-style="border:1px solid #000000;">
-</canvas>
-<div id="info"></div>
 
-<script>
-$(document).ready( function() 
-{
-  var $info = $('#info')
-  var $canvas = $('#thecanvas')
-  var context = $canvas[0].getContext('2d')
-  var now_drawing = false
-  var circle = { "center" : { "x" : 0, "y" : 0 } }
-  var compute_distance = function (x1,y1,x2,y2) 
-    {
-      return Math.sqrt ( Math.pow(x2-x1,2) + Math.pow(y2-y1,2) )
-    }
+<header>
+  <div > 
+    <h1>正</h1>
+  </div>
 
+  <div>
+    This website functions as an exhibition of prior interests and work.
 
-  context.moveTo(0,0)
+  </div> 
 
-  $canvas
-    
-    .click(function(e)
-    {
-      if (now_drawing) 
-      {
-        now_drawing = false
-      } 
-      else 
-      {
-        var position = $(this).position()
+  <div group="research"> 
+    <h1>research</h1>
+  </div>
 
-        circle.center.x = e.pageX - position.left
-        circle.center.y = e.pageY - position.top
-        now_drawing = true
-      }
-    })
+  <div>
+    <h1>public relations</h1>
+    <ul>
+    <li><a href="http://about.me/jerng" target="_blank">about.me</a></li>
+    <li>Telephone: +607-167-2357-29317<br>(remove every '7')</li>
+    <li>Electronic mail: yangjerngq@gmailq.comq<br>(remove every 'q')</li>
+    </ul>
+    All managed communications on commerce, art, <i>et cetera</i>, are
+    discoverable via the link above. 
+  </div>
+</header>
 
-    .mousemove(function(e)
-    {
-      if (now_drawing)
-      {
-        var position = $(this).position()
-        var x = e.pageX - position.left
-        var y = e.pageY - position.top
-        
-        context.clearRect(0,0,500,500)
+<section group="research">
+  <div>
+    <h2>aesthetics</h2>
+  </div>
+  <div>
+    <h3>music</h3>
+  </div>
+  <div>
+    <h3>coffee</h3>
+  </div>
+  <div>
+    <h3>athletics</h3>
+  </div>
+  <div>
+    <h3>visual art</h3>
+    <ul>
+      <li>some photography</li>
+      <li>some digital editing; of photographs, as well as vector
+      illustrations</li>
+      <li>minimal video production</li>
+      <li>a lot of work in the web medium</li>
+      <li>some work in other media</li>
+      <li>some 3D modelling (Blender)</li>
+    </ul>
+  </div>
+</section>
 
-        context.beginPath()
-        context.moveTo(circle.center.x,circle.center.y)
-        context.lineTo(x,y)
-        context.stroke()
+<section group="research">
+  <div>
+    <h2>analytics</h2>
+  </div>
+  <div>
+    <h3>web development</h3>
+    <ul>
+      <li>PHP: much, particularly CakePHP</li>
+      <li>Python: some, enough to get a Google App Engine project running</li>
+      <li>Ruby: some, enough to help a friend with homework</li>
+      <li>MySQL: some, enough to build a social network, and a stock trading
+      game</li>
+      <li>MongoDB: some, enough to build applications</li>
+    </ul>
+  </div>
+  <div>
+    <h3>erlang</h3>
+    <ul>
+      <li>mainly interested in: Erlang/OTP technology's potential for use to build the underlying
+      fabric ("infrastructure") for virtual and high-performance computing
+      applications. Examples of projects in this space are <a
+      href="http://erlangonxen.org/" target="_blank">Erlang on Xen</a> and <a
+      href="https://www.erlang-solutions.com/resources/collaterals/clustrx-os-makes-scalable-high-performance-computing-easy"
+      target="_blank">Clustrx OS</a>. The architecture seems much more
+      biological than most procedural / "stuck to the metal" approaches at the
+      turn of the 20th century.</li>
+      <li>studied: underlying <a
+      href="http://www.slideshare.net/jerng/erts-diagram"
+      target="_blank">architecture</a> of the runtime system, and how
+      OTP applications are <a
+      href="http://www.slideshare.net/jerng/otp-application-with-gen-server-child-simple-example"
+      target="_blank">organised</a></li>
+      <li>prototyped: an MVC web <a href="https://github.com/jerng/EZ-Erlang",
+      target="_blank">framework</a> with interpolable Erlang script in HTML</li>
+      <li></li>
+      <li></li>
+    </ul>
+  </div>
+  <div>
+    <h3>haskell</h3>
+    <ul>
+      <li>mainly interested in: Haskell's concise syntax, from a language
+      user's point of view. Aesthetically the indentation semantics also
+      appeal to me. The fact that it is semantically "pure", and the
+      fact that it compiles really close to the metal appear to be next in the
+      line of appealing conveniences. Finally the fact that the language is
+      supported by language nerds makes me feel a bit more at home, for merely
+      tribal reasons.</li>
+      <li>prototyped: an MVC web <a
+      href="https://github.com/jerng/Hell">framework</a> with interpolable
+      Haskell script in
+      HTML; on MongoDB</li>
+      <li></li>
+      <li></li>
+    </ul>
+  </div>
+  <div>
+    <h3></h3>
+  </div>
+  <div>
+    <h3></h3>
+  </div>
+  <div>
+    <h3></h3>
+  </div>
+  <div>
+    <h3></h3>
+  </div>
+</section>
 
-        context.beginPath()
-        context.arc(
-            circle.center.x
-          , circle.center.y
-          , compute_distance(
-                circle.center.x
-              , circle.center.y
-              , x
-              , y)
-          , 0
-          , Math.PI * 2)
-        context.stroke()
-
-        $info.html('mouse\'s x: ' + x + ', y: ' + y)
-      }
-    })
-
-})
-
-</script>
 </body>
 </html>
