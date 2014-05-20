@@ -77,7 +77,7 @@ section > div:first-child:hover > div {
 }
 
 div:first-child ~ div {
-  -webkit-transition: opacity 1s;
+  -webkit-transition: opacity 1s ease-out;
 }
 
 
